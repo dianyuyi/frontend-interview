@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TableCell } from '.';
+import { TableCell } from './TableRow';
 import { Skeleton } from '@/ui/Skeleton';
 
 const Loading = () => {

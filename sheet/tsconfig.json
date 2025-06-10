@@ -27,7 +27,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/constants/Footer.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }
