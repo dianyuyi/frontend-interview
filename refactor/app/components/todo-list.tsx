@@ -2,6 +2,12 @@
 
 import { useState } from "react";
 
+type TodoItem = {
+  id: number;
+  name: string;
+  isCompleted: boolean;
+};
+
 const todo = [
   {
     id: 1,
@@ -21,11 +27,14 @@ const todo = [
 ];
 
 export default function TodoList() {
-  const [list, setList] = useState(todo);
+  const [list, setList] = useState<TodoItem[]>([...todo]);
 
   function handleClick(index: number) {
-    list[index].isCompleted = !list[index].isCompleted;
-    setList(list);
+    setList((prevList) =>
+      prevList.map((item, idx) =>
+        idx === index ? { ...item, isCompleted: !item.isCompleted } : item
+      )
+    );
   }
 
   return (

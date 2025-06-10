@@ -9,18 +9,34 @@ type List = {
 
 export default function Menu() {
   const [menuList, setMenuList] = useState<List[]>([]);
-
-  if (menuList === []) {
-    return null;
-  }
+  const [isFetching, setIsFetching] = useState<boolean>(false);
 
   useEffect(() => {
     async function fetchData() {
+      setIsFetching(true);
+
       const data = await mockFetch();
       setMenuList(data);
+      setIsFetching(false);
     }
     fetchData();
   }, []);
+
+  if (isFetching) {
+    return (
+      <div>
+        {Array.from({ length: 4 }).map((_, idx) => (
+          <ul key={idx}>
+            <li className="w-full h-4 my-1 animate-pulse bg-gray-200 rounded"></li>
+          </ul>
+        ))}
+      </div>
+    );
+  }
+
+  if (menuList.length === 0) {
+    return null;
+  }
 
   return (
     <div className="px-4">
