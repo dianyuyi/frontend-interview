@@ -10,9 +10,9 @@ const Footer = () => {
         <span className="text-theme-main">{footerData.copyright.author}</span>
       </div>
       <div className="flex gap-4 text-theme-main">
-        {footerData.list.map((v, idx) => (
-          <Link href={v.url} key={idx}>
-            {v.title}
+        {footerData.list.map((value, idx) => (
+          <Link href={value.url} key={idx}>
+            {value.title}
           </Link>
         ))}
       </div>

@@ -1,5 +1,3 @@
-import { KeyedMutator } from 'swr';
-
 export type AccountData = {
   id: number;
   name: string;
@@ -20,7 +18,6 @@ export interface PageParams {
 export interface FetchParams extends PageParams {
   search: string;
 }
-export type RefreshData = KeyedMutator<AccountData[]>;
 
 export function mockFetch({
   page,
