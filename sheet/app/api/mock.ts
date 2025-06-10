@@ -17,13 +17,20 @@ export function mockFetch({
 }): Promise<AccountData[]> {
   const random = Math.random();
   if (random >= 0.3) {
+    console.log('test')
     return onSuccess({ page, pageSize });
   } else {
     return onError();
   }
 }
 
-function onSuccess({ page, pageSize }: { page: number; pageSize: number }): Promise<AccountData[]> {
+function onSuccess({
+  page,
+  pageSize,
+}: {
+  page: number;
+  pageSize: number;
+}): Promise<AccountData[]> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(mockData.slice((page - 1) * pageSize, page * pageSize));

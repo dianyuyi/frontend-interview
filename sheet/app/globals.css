@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f5fa;
+  --paper-ground: #ffffff;
+  --page-header: #f9fafc;
+  --page-divider: #3a35411f;
+  --outline: #3A35413B;
+
+  --text-primary: #3a3541de;
+  --text-secondary: #3a3541ad;
+  --text-disabled: #3a354161;
+  --primary-main: #9155FD;
+  --success-main: #56CA00;
+  --success-secondary: #4CAF50;
+  --warning-main: #FD5558;
+  --warning-secondary: #FE7272;
+;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-paper-ground: var(--paper-ground);
+  --color-page-header: var(--page-header);
+  --color-page-divider: var(--page-divider);
+  --color-outline: var(--outline);
+
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-theme-main: var(--primary-main);
+  --color-success-main: var(--success-main);
+  --color-success-secondary: var(--success-secondary);
+  --color-warning-main: var(--warning-main);
+  --color-warning-secondary: var(--warning-secondary);
+  --shadow-paper: 0 2px 10px rgba(58, 53, 65, 0.1); 
+
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
-body {
+/* body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
